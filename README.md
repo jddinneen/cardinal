@@ -24,6 +24,7 @@ The GUI uses Qt5 and therefore the PyQt5 bindings, and the pycrypto and dropbox 
 
 ### Sample of raw data
 The following describes one folder (containing two sub-folders) and one file it contains.
+```json
     "1": {
                 "c_time": "2015-06-30 18:58:18",
                 "children": [
@@ -64,3 +65,4 @@ The following describes one folder (containing two sub-folders) and one file it 
                 "symlinks": 0,
                 "white_spaces": 2
     }
+```
