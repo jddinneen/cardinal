@@ -2,7 +2,7 @@
 # coding:utf-8
 """
 Uploads data to dropbox
-WARNING: Dropbox token key may not be published!
+ATTENTION: insert your dropbox api token where 'DROPBOX_API_KEY' referenced below
 """
 
 import dropbox
