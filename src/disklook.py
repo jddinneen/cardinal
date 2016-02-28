@@ -53,6 +53,7 @@ def get_hardware_data():
         system_drive_string = ""
         df = subprocess.Popen(["df", "-H"], stdout=subprocess.PIPE)  # use df to get disk info
         df_results = df.communicate()[0].decode("utf-8")
+        df_results = df_results.replace(',', '.')
         df_array = df_results.splitlines()
 
         if sys.platform in ('linux',  'linux2',  'linux3'):
