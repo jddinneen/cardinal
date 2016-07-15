@@ -1,6 +1,6 @@
 # Cardinal
 
-Cardinal is software for collecting data about users' file management behavior through their voluntary, remote, and anonymous participation. A GUI, built in Qt5, guides users through participation, presents them with a summary of their results, and returns the anonymized data to the researchers. Data are collected only about those files and folders that users specify, and specified locations can be ignored as well. No identifying data is collected, file and folder names are not stored, and file contents are not accessed.
+Cardinal is software for collecting data about users' file management behavior through their voluntary, remote, and anonymous participation. A GUI, built in Qt5, guides users through participation, presents them with a summary of their results, and returns the anonymized data to the researchers. Data are collected only about those files and folders that users specify, and specified locations can be ignored as well. No identifying data are collected, file and folder names are not stored, and file contents are not accessed.
 
 For the purposes of the first study using Cardinal (read about it here: http://dinneen.research.mcgill.ca), this version collects additional data via text fields and questionnaires, namely: (anonymous) demographic features, technological properties like the OS, installed FM software (using semi-reliable detection), hard drive capacity and use, and the psychological measures of personality style and spatial cognition using the Ten Item Personality Index and Santa Barbara Sense of Direction Scale.
 
