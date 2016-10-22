@@ -61,7 +61,7 @@ def get_hardware_data():
         elif sys.platform in 'darwin':
             system_drive_string = "/dev/disk"  # mac disk prefix
 
-        for line in df_array:
+for line in df_array:
             if system_drive_string in line:
                 this_drive = Drive()
                 values = line.split(" ")
@@ -76,36 +76,60 @@ def get_hardware_data():
                 rawusedstring = newvalues[2]
                 rawfreestring = newvalues[3]
 
-                sizefloat = float(rawsizestring[:-1])
-
-                if 'T' in rawsizestring:  # EACH OF THESE STORED IN MEGABYTES
-                    this_drive.size = sizefloat * 1024 * 1024
-                elif 'G' in rawsizestring:
-                    this_drive.size = sizefloat * 1024
-                elif 'M' in rawsizestring:
-                    this_drive.size = sizefloat
-                elif ('K' in rawsizestring) or ('k' in rawsizestring):
-                    this_drive.size = sizefloat / 1024
-                usedfloat = float(rawusedstring[:-1])
-
-                if 'T' in rawusedstring:
-                    this_drive.used = usedfloat * 1024 * 1024
-                elif 'G' in rawusedstring:
-                    this_drive.used = usedfloat * 1024
-                elif 'M' in rawusedstring:
-                    this_drive.used = usedfloat
-                elif ('K' in rawusedstring) or ('k' in rawusedstring):
-                    this_drive.used = usedfloat / 1024
-                freefloat = float(rawfreestring[:-1])
-
-                if 'T' in rawfreestring:
-                    this_drive.free = freefloat * 1024 * 1024
-                elif 'G' in rawfreestring:
-                    this_drive.free = freefloat * 1024
-                elif 'M' in rawfreestring:
-                    this_drive.free = freefloat
-                elif ('K' in rawfreestring) or ('k' in rawfreestring):
-                    this_drive.free = freefloat / 1024
+                if len(rawsizestring) > 1:
+                    sizefloat = float(rawsizestring[:-1])
+                    if ('T' in rawsizestring) or ('t' in rawsizestring):  # EACH OF THESE STORED IN MEGABYTES
+                        this_drive.size = sizefloat * 1024 * 1024
+                    elif ('G' in rawsizestring) or ('g' in rawsizestring):
+                        this_drive.size = sizefloat * 1024
+                    elif ('M' in rawsizestring) or ('m' in rawsizestring):
+                        this_drive.size = sizefloat
+                    elif ('K' in rawsizestring) or ('k' in rawsizestring):
+                        this_drive.size = sizefloat / 1024
+                    else:
+                        this_drive.size = -2
+                else:
+                    if rawsizestring == "0":
+                        this_drive.size = 0
+                    else:
+                        this_drive.size = -2
+                
+                if len(rawusedstring) > 1:
+                    usedfloat = float(rawusedstring[:-1])
+                    if ('T' in rawusedstring) or ('t' in rawusedstring):
+                        this_drive.used = usedfloat * 1024 * 1024
+                    elif ('G' in rawusedstring) or ('g' in rawusedstring):
+                        this_drive.used = usedfloat * 1024
+                    elif ('M' in rawusedstring) or ('m' in rawusedstring):
+                        this_drive.used = usedfloat
+                    elif ('K' in rawusedstring) or ('k' in rawusedstring):
+                        this_drive.used = usedfloat / 1024
+                    else:
+                        this_drive.used = -2
+                else:
+                    if rawusedstring == "0":
+                        this_drive.used = 0
+                    else:
+                        this_drive.used = -2
+                
+                if len(rawfreestring) > 1:
+                    freefloat = float(rawfreestring[:-1])
+                    if ('T' in rawfreestring) or ('t' in rawfreestring):
+                        this_drive.free = freefloat * 1024 * 1024
+                    elif ('G' in rawfreestring) or ('g' in rawfreestring):
+                        this_drive.free = freefloat * 1024
+                    elif ('M' in rawfreestring) or ('m' in rawfreestring):
+                        this_drive.free = freefloat
+                    elif ('K' in rawfreestring) or ('k' in rawfreestring):
+                        this_drive.free = freefloat / 1024
+                    else:
+                        this_drive.free = -2
+                else:
+                    if rawfreestring == "0":
+                        this_drive.free = 0
+                    else:
+                        this_drive.free = -2
+                
                 drives.append(this_drive)
 
     return drives
