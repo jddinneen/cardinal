@@ -108,6 +108,7 @@ def scan(locations,  ignores):
 
             if root in default_locations:
                 this_node.default = True
+            #TO DO: check to see if it is the desktop, if so, mark the folder (will require appro. folder property)
 
             this_node.letters = sum(char.isalpha() for char in root_head_tail[1])
             this_node.numbers = sum(char.isdigit() for char in root_head_tail[1])
