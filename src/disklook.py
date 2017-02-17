@@ -61,7 +61,7 @@ def get_hardware_data():
         elif sys.platform in 'darwin':
             system_drive_string = "/dev/disk"  # mac disk prefix
 
-for line in df_array:
+        for line in df_array:
             if system_drive_string in line:
                 this_drive = Drive()
                 values = line.split(" ")
