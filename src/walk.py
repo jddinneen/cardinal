@@ -170,7 +170,7 @@ def scan(locations,  ignores):
                     this_file.file_id = file_id_counter
                     this_file.full_name_length = len(str(f))
 
-                    try:
+                    try: #sometimes statinfo is not available
                         statinfo = os.stat(os.path.join(root, f))
                     except:
                         statinfo = False
@@ -179,17 +179,26 @@ def scan(locations,  ignores):
                         if statinfo.st_nlink > 1:
                             this_file.hard_link_duplicate = True
 
-                        this_file.a_time = datetime.datetime.fromtimestamp(statinfo.st_atime).strftime("%Y-%m-%d %H:%M:%S")
-                        this_file.m_time = datetime.datetime.fromtimestamp(statinfo.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
-                        this_file.c_time = datetime.datetime.fromtimestamp(statinfo.st_ctime).strftime("%Y-%m-%d %H:%M:%S")
+                        try: #sometimes even when statinfo is available, particular stats are missing
+                            this_file.a_time = datetime.datetime.fromtimestamp(statinfo.st_atime).strftime("%Y-%m-%d %H:%M:%S")
+                        except:
+                            this_file.a_time = -2
+                        try:
+                            this_file.m_time = datetime.datetime.fromtimestamp(statinfo.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+                        except:
+                            this_file.m_time = -2
+                        try:
+                            this_file.c_time = datetime.datetime.fromtimestamp(statinfo.st_ctime).strftime("%Y-%m-%d %H:%M:%S")
+                        except:
+                            this_file.c_time = -2
 
                         this_file.file_size = statinfo.st_size
-
                         if this_file.file_size == 0:
                             try:
                                 this_file.file_size = os.path.getsize(os.path.join(root, f))
                             except:
                                 this_file.file_size = -2
+                    
                     else:
                         this_file.a_time = -2
                         this_file.m_time = -2
