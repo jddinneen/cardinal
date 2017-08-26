@@ -15,7 +15,7 @@ __status__ = "Beta"
 
 
 DEFAULT_FOLDERS = {"linux": {"Desktop", "Downloads"},
-                   "mac": {"Desktop", "Documents", "Downloads", "Movies",
+                   "mac": {"Desktop", "Documents", "Downloads", "iTunes", "Library", "Movies",
                            "Music", "Pictures", "Public", "Sites"},
                    "win": {"Contacts", "Desktop", "Documents", "Downloads",
                            "Favorites", "Links", "Music", "Pictures",
