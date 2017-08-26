@@ -47,7 +47,11 @@ def scan(locations,  ignores):
     elif sys.platform in ['darwin']:
         default_locations = {os.path.join(HOME, folder) for folder in DEFAULT_FOLDERS["mac"]}
         apps_folder = [os.path.join(HOME, "Applications")]
+        iTunes_folder = [os.path.join(HOME, "Music/iTunes")]
+        library_folder = [os.path.join(HOME, "Library")]
         ignores.append(apps_folder)
+        ignores.append(itunes_folder)
+        ignores.append(library_folder)
     elif sys.platform in ['linux',  'linux2',  'linux3']:
         default_locations = {os.path.join(HOME, folder) for folder in DEFAULT_FOLDERS["linux"]}
     else:
@@ -79,7 +83,7 @@ def scan(locations,  ignores):
                 except (AttributeError, AssertionError):
                     result = False
                 return result
-            else: #POSIX style hidden files. TODO: add provision for mac 'hidden' flag.
+            else: #POSIX style hidden files. TODO: add provision for mac 'hidden' flag as users can manually hide folders using this mac-specific flag.
                 if str(f).startswith('.'):
                     return True
                 else:
