@@ -79,7 +79,7 @@ def scan(locations,  ignores):
                 except (AttributeError, AssertionError):
                     result = False
                 return result
-            else:  # there are other ways to hide files in MacOS but they are incredibly obscure and presumably infrequently used. also very 'expensive' to check.
+            else: #POSIX style hidden files. TODO: add provision for mac 'hidden' flag.
                 if str(f).startswith('.'):
                     return True
                 else:
