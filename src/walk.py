@@ -44,13 +44,13 @@ def scan(locations,  ignores):
     # Search and mark the default folders found in the file system
     if sys.platform in ['Windows',  'win32']:
         default_locations = {os.path.join(HOME, folder) for folder in DEFAULT_FOLDERS["win"]}
-        iTunes_folder = [os.path.join(HOME, "My Music\iTunes")]
+        iTunes_folder = os.path.join(HOME, "My Music\iTunes")
         ignores.append(itunes_folder)
     elif sys.platform in ['darwin']:
         default_locations = {os.path.join(HOME, folder) for folder in DEFAULT_FOLDERS["mac"]}
-        apps_folder = [os.path.join(HOME, "Applications")]
-        iTunes_folder = [os.path.join(HOME, "Music/iTunes")]
-        library_folder = [os.path.join(HOME, "Library")]
+        apps_folder = os.path.join(HOME, "Applications")
+        iTunes_folder = os.path.join(HOME, "Music/iTunes")
+        library_folder = os.path.join(HOME, "Library")
         ignores.append(apps_folder)
         ignores.append(itunes_folder)
         ignores.append(library_folder)
