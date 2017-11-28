@@ -49,7 +49,7 @@ def scan(locations,  ignores):
     elif sys.platform in ['darwin']:
         default_locations = {os.path.join(HOME, folder) for folder in DEFAULT_FOLDERS["mac"]}
         apps_folder = os.path.join(HOME, "Applications")
-        iTunes_folder = os.path.join(HOME, "Music/iTunes")
+        itunes_folder = os.path.join(HOME, "Music/iTunes")
         library_folder = os.path.join(HOME, "Library")
         ignores.append(apps_folder)
         ignores.append(itunes_folder)
