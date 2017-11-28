@@ -57,7 +57,7 @@ def scan(locations,  ignores):
     elif sys.platform in ['linux',  'linux2',  'linux3']:
         default_locations = {os.path.join(HOME, folder) for folder in DEFAULT_FOLDERS["linux"]}
     else:
-        raise "Plattform not detected"
+        raise "Platform not detected"
 
     for location in locations:
         norm_location = str(location)
