@@ -4,7 +4,6 @@
 prepares a summary of the user's data
 Todo:
     * Replace print with logging
-    * Add runtime to transmit data
 """
 
 from datetime import datetime
@@ -15,7 +14,7 @@ __copyright__ = "Copyright 2015, JDD"
 __license__ = "GPL"
 __version__ = "0.1"
 __maintainer__ = "Jesse David Dinneen"
-__email__ = "jesse.dinneen@mail.mcgill.ca"
+__email__ = "jesse.dinneen@vuw.ac.nz"
 __status__ = "Beta"
 
 
