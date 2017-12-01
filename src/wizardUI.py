@@ -4,7 +4,7 @@
 #
 # Created by: PyQt5 UI code generator 5.5.1
 #
-# WARNING! All changes made in this file will be lost!
+#
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -2274,7 +2274,7 @@ class Ui_Wizard(object):
         _translate = QtCore.QCoreApplication.translate
         self.wizardPage1.setTitle(_translate("Wizard", "Introduction"))
         self.wizardPage1.setSubTitle(_translate("Wizard", "Read the information below, click the check box if you understand and consent to participate, and click \'Next\' to begin."))
-        self.welcomeLabel.setText(_translate("Wizard", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600;\">Welcome!</span></p><p align=\"justify\">You are invited to participate in a study that aims to understand how people manage information on their computers. You will be asked to enter some basic information, answer two brief questionnaires, and select locations on your hard drive to be included in data collection. This collects basic data about your files and folders, such as how many files are in each folder and how full your hard drive is -- file contents are not viewed, file and folder names are not recorded, and you will see the results before choosing to submit them. <span style=\" font-weight:600;\">No identifying data is collected</span><span style=\" font-weight:600; font-style:italic;\">.</span> The whole process typically takes about ten minutes, and no there are no known associated risks. You may refuse to answer any question or withdraw from the study at any time by exiting the software. <span style=\" font-style:italic;\">Your computer must be connected to the internet to proceed</span>.</p></body></html>"))
+        self.welcomeLabel.setText(_translate("Wizard", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600;\">WARNING</span></p><p align=\"justify\">DEBUG BUILD ONLY. SHOULD  NOT BE RUN BY END USER. Lorem ipsum -- populate with consent form, contact information, research ethics approval, etc. <span style=\" font-weight:600;\">...text...</span><span style=\" font-weight:600; font-style:italic;\">.</span> ...text... <span style=\" font-style:italic;\">...text...</span>.</p></body></html>"))
         self.consentBox.setText(_translate("Wizard", "I understand and consent to participate: "))
         self.rebLabel.setText(_translate("Wizard", "<html><head/><body><p align=\"justify\">This study is conducted by <a href=\"mailto:jesse.dinneen@mail.mcgill.ca\"><span style=\" text-decoration: underline; color:#2980b9;\">Jesse David Dinneen</span></a>, a PhD candidate supervised by Prof. <a href=\"mailto:charles.julien@mcgill.ca\"><span style=\" text-decoration: underline; color:#2980b9;\">Charles-Antoine Julien</span></a> in the School of Information Studies at McGill University, and is approved by McGill University Research Ethics Board (#75-0715, \'Understanding file management behavior\'). If you have any questions or concerns regarding your rights or welfare as a participant in this research study, please contact the McGill Ethics Manager at 514-398-6831 or <a href=\"mailto:lynda.mcneil@mcgill.ca\"><span style=\" text-decoration: underline; color:#2980b9;\">lynda.mcneil@mcgill.ca</span></a></p></body></html>"))
         self.consentSaveButton.setText(_translate("Wizard", "Save this info to file (optional)"))
