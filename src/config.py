@@ -26,7 +26,7 @@ CONSENT_FILE_DIR = 'consent_form.txt'
 SUMMARY_FILE_DIR = 'summary_file.txt'
 
 # insert your consent form text, contact info, research ethics information, etc here
-# don't forget to also update the welcomeLabel text in wizardUI file to match.
+# don't forget to also update the welcomeLabel and rebLabel (ethics details) text in wizardUI file to match.
 CONSENT_TEXT = "Lorem ipsum -- populate with consent form, contact information, research ethics approval, etc."
 
 # '''
