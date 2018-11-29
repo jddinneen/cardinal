@@ -68,6 +68,7 @@ def summarize(the_results):
             # print("Analyzing node #{}: {}".format(nodes_analyzed, node_id))
 
             len_node_file_list = len(node.file_list)
+            len_node_children_list = len(node.children)
 
             if node.depth > max_folder_depths:
                 max_folder_depths = node.depth
@@ -83,7 +84,7 @@ def summarize(the_results):
             files_per_folder['sum'] += len_node_file_list
             files_per_folder['number'] += 1
 
-            if len_node_file_list < 1:
+            if (len_node_file_list < 1) and (len_node_children_list < 1):
                 empty_folders += 1
 
             for file_in_node in node.file_list:
