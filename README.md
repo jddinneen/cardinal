@@ -1,6 +1,6 @@
 # Cardinal
 
-Cardinal is software for researchers to use to collect data about study participants' file management through their voluntary, remote, and anonymous participation. The motivations and technical details of the development of Cardinal can be read in detail in Dinneen et al, (2016) Cardinal: Novel software for studying file management behavior. *ASIS&T 2016: Proceedings of the 79th Annual Meeting of the Association for Information Science & Technology, 53*. It was created by Dr. Jesse Dinneen (Victoria University of Wellington) with the assistance of Fabian Odoni (HTW Chur).
+Cardinal is software for researchers to use to collect data about study participants' file management through their voluntary, remote, and anonymous participation. The motivations and technical details of the development of Cardinal can be read in detail in Dinneen et al, (2016) Cardinal: Novel software for studying file management behavior. *ASIS&T 2016: Proceedings of the 79th Annual Meeting of the Association for Information Science & Technology, 53*. It was created by Dr. Jesse Dinneen (Victoria University of Wellington) with the assistance of Fabian Odoni (Fachhochschule Graubünden).
 
 ## Usage
 
